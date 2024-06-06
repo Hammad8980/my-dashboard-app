@@ -1,6 +1,6 @@
 // app/dashboard/customers/register/page.tsx
 
-import CustomerRegistrationForm from '@/app/ui/customers/registration-form.tsx';
+import CustomerRegistrationForm from '@/app/ui/customers/registration-form';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
