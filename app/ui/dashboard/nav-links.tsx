@@ -3,12 +3,11 @@ import {
   UserGroupIcon,
   HomeIcon,
   DocumentDuplicateIcon,
+  PlusCircleIcon, // Import the icon for the register link
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
-
-
 
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
@@ -20,6 +19,11 @@ const links = [
     icon: DocumentDuplicateIcon,
   },
   { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
+  { // Add new link for customer registration
+    name: 'Register Customer',
+    href: '/dashboard/customers/register',
+    icon: PlusCircleIcon,
+  },
 ];
 
 export default function NavLinks() {

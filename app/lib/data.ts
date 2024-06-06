@@ -241,3 +241,16 @@ export async function getUser(email: string) {
     throw new Error('Failed to fetch user.');
   }
 }
+
+export async function saveCustomer(customer: { name: string; email: string; imageUrl: string }) {
+  noStore();
+  try {
+    await sql`
+      INSERT INTO customers (name, email, image_url)
+      VALUES (${customer.name}, ${customer.email}, ${customer.imageUrl})
+    `;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to save customer.');
+  }
+}
